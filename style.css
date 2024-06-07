@@ -1,0 +1,287 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url(imagens/background.avif);
+    background-size: 100% 100%; /* Alteração para preencher toda a tela */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: overlay;
+    font-family: var(--font2);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    font-family: 'Ballega';
+    src: url(fonts/Ballega.otf);
+}
+
+@font-face {
+    font-family: 'ArialNarrow';
+    src: url(fonts/arial_narrow_7.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #00796B;
+    --secondary-color: #80CBC4;
+    --accent-color: #FFD54F;
+    --background-color: #FFFFFF;
+    --neutral-light: #BDBDBD;
+    --neutral-dark: #616161;
+    --font1: 'Ballega';
+    --font2: 'ArialNarrow';
+    --azul: #00796B;
+    --vermelho: #C1292E;
+    --bronzeado: #D3B99F;
+    --branco: #FFD54F;
+}
+
+h1 {
+    font-family: var(--font1);
+    text-align: center;
+    background-color: var(--azul);
+    padding: 40px;
+    color: var(--branco);
+    margin-bottom: 0.5px;
+    text-shadow: 0px 1px 5px #353535;
+}
+
+.menu {
+    background-color: var(--azul);
+    display: flex;
+    justify-content: space-around;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+    font-family: var(--font2);
+    text-shadow: 0px 1px 5px #353535;
+}
+
+.menu a:hover {
+    background-color: var(--branco);
+    color: rgb(0, 255, 0);
+    border-radius: 10px;
+}
+
+.rodape {
+    background-color: var(--azul);
+    padding: 30px;
+    color: var(--branco);
+    text-align: center;
+}
+
+img {
+    width: 200px;
+}
+
+
+
+
+p {
+    margin: 20px 0;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+header {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        background-color: var(--azul);
+        color: var(--branco);
+        font-size: 24px;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .menu a {
+        display: none;
+    }
+
+    .menu.show a {
+        display: block;
+    }
+
+    .titulo h1 {
+        font-size: 24px;
+        padding: 20px;
+    }
+
+    .corpo {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    img {
+        width: 150px;
+    }
+}
+
+/* Estilos para tablets */
+@media (max-width: 1024px) {
+    header {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .menu a {
+        padding: 15px;
+    }
+
+    .corpo {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    img {
+        width: 180px;
+    }
+}
+main{
+    color: white;
+}
+.corpo {
+    background-color: rgba(0, 0, 0, 0.7); /* Adicionando um fundo mais escuro */
+    max-width: 1200px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: justify; /* Alinhamento justificado para o texto */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.corpo h2, .corpo h3 {
+    color: var(--branco); /* Definindo a cor do texto para branco */
+}
+
+.corpo ul, .corpo ol {
+    list-style-type: none; /* Removendo os estilos padrão das listas */
+    padding-left: 0; /* Removendo o recuo padrão das listas */
+    text-align: left; /* Alinhando o texto à esquerda dentro das listas */
+}
+
+.corpo ul li:before {
+    content: "\2022"; /* Usando um ponto como marcador de lista */
+    color: var(--branco); /* Definindo a cor do marcador */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; /* Ajustando o recuo do marcador */
+}
+
+.corpo ol li {
+    counter-increment: item;
+}
+
+.corpo ol li:before {
+    content: counter(item) "."; /* Usando números como marcadores de lista */
+    color: var(--branco); /* Definindo a cor do marcador */
+    display: inline-block;
+    width: 2em;
+    margin-left: -2em; /* Ajustando o recuo do marcador */
+}
+.menu-toggle {
+    display: none; /* Ocultar o botão em telas maiores */
+}
+
+/* Estilos para telas menores (mobile) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Exibir o botão em telas menores */
+        background-color: transparent; /* Fundo transparente */
+        color: var(--branco); /* Cor do texto branca */
+        font-size: 24px; /* Tamanho da fonte */
+        border: none; /* Remover borda */
+        padding: 10px; /* Espaçamento interno */
+        cursor: pointer; /* Cursor do mouse ao passar por cima */
+        position: fixed; /* Posicionamento fixo */
+        top: 10px; /* Distância do topo */
+        left: 10px; /* Distância da esquerda */
+        z-index: 1000; /* Z-index para sobrepor outros elementos */
+    }
+
+    .menu-toggle:focus {
+        outline: none; /* Remover contorno ao focar */
+    }
+
+    /* Estilização do botão */
+    .menu-toggle {
+        border-radius: 5px; /* Borda arredondada */
+        transition: background-color 0.3s ease; /* Transição suave */
+    }
+
+    /* Estilização do botão ao passar o mouse */
+    .menu-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Fundo com transparência ao passar o mouse */
+    }
+
+    /* Animação do botão do menu */
+    .menu-toggle span {
+        display: block; /* Exibir como bloco */
+        width: 25px; /* Largura */
+        height: 3px; /* Altura */
+        background-color: var(--branco); /* Cor do traço */
+        margin-bottom: 5px; /* Margem inferior */
+        transition: all 0.3s ease; /* Transição suave */
+    }
+
+    /* Animação do botão do menu quando ativado */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); /* Rotação e translação */
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0; /* Ocultar o segundo traço */
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px); /* Rotação e translação */
+    }
+}
+
